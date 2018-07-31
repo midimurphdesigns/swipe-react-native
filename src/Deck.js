@@ -2,10 +2,17 @@ import React, { Component } from 'react'
 import { Text, StyleSheet, View, Animated } from 'react-native'
 
 export default class Deck extends Component {
+
+  renderCards() {
+    return this.props.data.map(item => {
+      return this.props.renderCard(item);
+    });
+  }
+
   render() {
     return (
       <View>
-        <Text> This is Deck </Text>
+        {this.renderCards()}
       </View>
     )
   }
